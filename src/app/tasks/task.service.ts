@@ -1,10 +1,10 @@
 import { Injectable, signal } from "@angular/core";
 import { Task, TaskStatus } from "./task.model";
-import { take } from "rxjs";
 
-// @Injectable({
-//     providedIn:'root'
-// })
+
+@Injectable({
+    providedIn:'root'
+})
 export class TaskService {
 
     private tasks=signal<Task[]>([]);
