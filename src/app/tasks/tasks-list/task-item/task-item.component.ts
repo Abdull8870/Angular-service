@@ -1,7 +1,7 @@
 import { Component, computed, input, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { Task, TaskStatus } from '../../task.model';
+import { Task, TaskStatus, TAST_STATUS_OPTIONS } from '../../task.model';
 import { TaskService } from '../../task.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { TaskService } from '../../task.service';
   styleUrl: './task-item.component.css',
 })
 export class TaskItemComponent {
+  taskStatusOptions=inject(TAST_STATUS_OPTIONS);
   private taskService=inject(TaskService);
   task = input.required<Task>();
   taskStatus = computed(() => {
